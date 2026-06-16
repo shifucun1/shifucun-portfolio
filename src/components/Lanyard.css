@@ -9,3 +9,23 @@
   transform: scale(1);
   transform-origin: center;
 }
+
+.lanyard-diagnostic {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  max-width: min(420px, calc(100vw - 48px));
+  padding: 10px 14px;
+  border: 1px solid rgba(214, 180, 110, 0.28);
+  border-radius: 14px;
+  background: rgba(17, 18, 13, 0.82);
+  color: #f0ddb3;
+  font-size: 12px;
+  line-height: 1.45;
+  letter-spacing: 0;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+}

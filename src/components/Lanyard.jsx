@@ -32,11 +32,19 @@ export default function Lanyard({
   metalColor = null
 }) {
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
+  const [diagnostic, setDiagnostic] = useState('');
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return undefined;
+    if (window.WebGLRenderingContext) return undefined;
+    setDiagnostic('Lanyard unavailable: WebGL unsupported');
+    return undefined;
   }, []);
 
   return (
@@ -45,7 +53,14 @@ export default function Lanyard({
         camera={{ position, fov }}
         dpr={[1, isMobile ? 1.5 : 2]}
         gl={{ alpha: transparent }}
-        onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
+        onCreated={({ gl }) => {
+          gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1);
+          setDiagnostic('');
+        }}
+        onError={(error) => {
+          const reason = error instanceof Error ? error.message : 'Canvas init failed';
+          setDiagnostic(`Lanyard unavailable: ${reason}`);
+        }}
       >
         <ambientLight intensity={Math.PI} />
         <Physics gravity={gravity} timeStep={isMobile ? 1 / 30 : 1 / 60}>
@@ -92,6 +107,7 @@ export default function Lanyard({
           />
         </Environment>
       </Canvas>
+      {diagnostic ? <div className="lanyard-diagnostic">{diagnostic}</div> : null}
     </div>
   );
 }
