@@ -38,6 +38,7 @@ const projects = [
 
 const skills = ['Photoshop', 'Illustrator', 'Rhino', 'AutoCAD', 'Blender', 'Figma', 'Midjourney', 'ChatGPT'];
 const marqueeSkills = Array.from({ length: 5 }, () => skills).flat();
+const assetPath = (path) => `${import.meta.env.BASE_URL}${path}`;
 
 const strengths = [
   {
@@ -548,7 +549,7 @@ function App() {
         ref={heroRef}
         onPointerDown={triggerSoftwareDrop}
       >
-        <div className="heroImage" aria-hidden="true">
+        <div className="heroImage" aria-hidden="true" style={{ backgroundImage: `url("${assetPath('atelier-hero.jpg')}")` }}>
           <div className="lightWash" />
         </div>
         <nav className="nav">
@@ -565,9 +566,9 @@ function App() {
             position={[0, 0, 20]}
             gravity={[0, -40, 0]}
             groupPosition={[-2, 4, 0]}
-            frontImage="/lanyard-card-front.svg"
-            backImage="/lanyard-card-back.svg"
-            lanyardImage="/lanyard-band.png"
+            frontImage={assetPath('lanyard-card-front.svg')}
+            backImage={assetPath('lanyard-card-back.svg')}
+            lanyardImage={assetPath('lanyard-band.png')}
             imageFit="cover"
             cardTint="#d6b46e"
             metalColor="#8f8370"
