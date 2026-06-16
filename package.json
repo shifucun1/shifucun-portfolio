@@ -1,0 +1,24 @@
+{
+  "name": "designer-portfolio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "@react-three/rapier": "^2.2.0",
+    "@vitejs/plugin-react": "latest",
+    "lucide-react": "latest",
+    "matter-js": "^0.20.0",
+    "meshline": "^3.3.1",
+    "react": "latest",
+    "react-dom": "latest",
+    "three": "^0.184.0",
+    "vite": "latest"
+  }
+}

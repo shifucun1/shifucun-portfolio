@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 32">
+  <rect width="96" height="32" fill="#11140d"/>
+  <rect y="2" width="96" height="28" fill="#263220"/>
+  <path d="M0 5H96M0 27H96" stroke="#080906" stroke-width="4"/>
+  <path d="M0 9H96M0 23H96" stroke="#8aa0ad" stroke-opacity="0.55" stroke-width="1.6"/>
+  <path d="M0 16H96" stroke="#d6b46e" stroke-width="5"/>
+  <path d="M14 0L46 32M50 0L82 32M86 0L118 32" stroke="#efe1c6" stroke-opacity="0.32" stroke-width="5"/>
+  <text x="48" y="21" text-anchor="middle" font-family="Outfit, Arial, sans-serif" font-size="10" font-weight="700" fill="#efe1c6">SHI</text>
+</svg>

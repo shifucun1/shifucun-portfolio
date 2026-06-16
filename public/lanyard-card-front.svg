@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1360">
+  <defs>
+    <linearGradient id="cardBg" x1="90" y1="40" x2="810" y2="1320" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3b452f"/>
+      <stop offset="0.42" stop-color="#171a12"/>
+      <stop offset="1" stop-color="#090a07"/>
+    </linearGradient>
+    <radialGradient id="warmGlow" cx="34%" cy="24%" r="62%">
+      <stop offset="0" stop-color="#d6b46e" stop-opacity="0.34"/>
+      <stop offset="0.5" stop-color="#8aa0ad" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#050604" flood-opacity="0.5"/>
+    </filter>
+    <pattern id="grain" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M0 22H80M0 58H80" stroke="#efe1c6" stroke-opacity="0.035" stroke-width="1"/>
+      <path d="M18 0V80M62 0V80" stroke="#8aa0ad" stroke-opacity="0.025" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="1360" rx="72" fill="url(#cardBg)"/>
+  <rect width="900" height="1360" rx="72" fill="url(#warmGlow)"/>
+  <rect width="900" height="1360" rx="72" fill="url(#grain)"/>
+  <rect x="44" y="44" width="812" height="1272" rx="54" fill="none" stroke="#efe1c6" stroke-opacity="0.18" stroke-width="3"/>
+  <rect x="92" y="100" width="250" height="250" rx="56" fill="#efe1c6" fill-opacity="0.055" stroke="#d6b46e" stroke-opacity="0.42" stroke-width="3"/>
+  <g transform="translate(450 560)" filter="url(#softShadow)">
+    <ellipse rx="250" ry="80" fill="none" stroke="#d6b46e" stroke-width="42" stroke-linecap="round" transform="rotate(0)"/>
+    <ellipse rx="250" ry="80" fill="none" stroke="#d6b46e" stroke-width="42" stroke-linecap="round" transform="rotate(60)"/>
+    <ellipse rx="250" ry="80" fill="none" stroke="#d6b46e" stroke-width="42" stroke-linecap="round" transform="rotate(120)"/>
+    <circle r="33" fill="#efe1c6"/>
+  </g>
+  <text x="105" y="900" fill="#8aa0ad" font-family="Outfit, Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="0">VISUAL / AI / BRAND</text>
+  <text x="105" y="1012" fill="#efe1c6" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="72" font-weight="700">诗附存</text>
+  <text x="105" y="1096" fill="#d6b46e" font-family="Outfit, Arial, sans-serif" font-size="46" font-weight="700">guchixsh@163.com</text>
+  <text x="105" y="1228" fill="#efe1c6" fill-opacity="0.46" font-family="Outfit, Arial, sans-serif" font-size="34" font-weight="700">PORTFOLIO ID / 2026</text>
+</svg>
