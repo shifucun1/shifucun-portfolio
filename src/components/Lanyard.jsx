@@ -41,7 +41,6 @@ export default function Lanyard({
 
   return (
     <div className="lanyard-wrapper">
-      <StaticLanyard frontImage={frontImage} lanyardImage={lanyardImage} cardTint={cardTint} metalColor={metalColor} />
       <Canvas
         camera={{ position, fov }}
         dpr={[1, isMobile ? 1.5 : 2]}
@@ -93,21 +92,6 @@ export default function Lanyard({
           />
         </Environment>
       </Canvas>
-    </div>
-  );
-}
-
-function StaticLanyard({ frontImage = null, lanyardImage = null, cardTint = '#ffffff', metalColor = '#8f8370' }) {
-  const frontStyle = frontImage ? { backgroundImage: `url("${frontImage}")` } : undefined;
-  const strapStyle = lanyardImage ? { backgroundImage: `url("${lanyardImage}")` } : undefined;
-
-  return (
-    <div className="lanyard-fallback" aria-hidden="true">
-      <div className="lanyard-fallback__strap" style={strapStyle} />
-      <div className="lanyard-fallback__clip" style={{ borderColor: metalColor }} />
-      <div className="lanyard-fallback__card" style={{ backgroundColor: cardTint }}>
-        <div className="lanyard-fallback__art" style={frontStyle} />
-      </div>
     </div>
   );
 }
