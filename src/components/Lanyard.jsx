@@ -32,7 +32,6 @@ export default function Lanyard({
   metalColor = null
 }) {
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
-  const [canvasReady, setCanvasReady] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -42,21 +41,11 @@ export default function Lanyard({
 
   return (
     <div className="lanyard-wrapper">
-      <StaticLanyard
-        frontImage={frontImage}
-        lanyardImage={lanyardImage}
-        cardTint={cardTint}
-        metalColor={metalColor}
-        hidden={canvasReady}
-      />
       <Canvas
         camera={{ position, fov }}
         dpr={[1, isMobile ? 1.5 : 2]}
         gl={{ alpha: transparent }}
-        onCreated={({ gl }) => {
-          gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1);
-          setCanvasReady(true);
-        }}
+        onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
       >
         <ambientLight intensity={Math.PI} />
         <Physics gravity={gravity} timeStep={isMobile ? 1 / 30 : 1 / 60}>
@@ -103,21 +92,6 @@ export default function Lanyard({
           />
         </Environment>
       </Canvas>
-    </div>
-  );
-}
-
-function StaticLanyard({ frontImage = null, lanyardImage = null, cardTint = '#ffffff', metalColor = '#8f8370', hidden = false }) {
-  const frontStyle = frontImage ? { backgroundImage: `url("${frontImage}")` } : undefined;
-  const strapStyle = lanyardImage ? { backgroundImage: `url("${lanyardImage}")` } : undefined;
-
-  return (
-    <div className={`lanyard-fallback ${hidden ? 'lanyard-fallback--hidden' : ''}`} aria-hidden={hidden ? 'true' : 'false'}>
-      <div className="lanyard-fallback__strap" style={strapStyle} />
-      <div className="lanyard-fallback__clip" style={{ borderColor: metalColor }} />
-      <div className="lanyard-fallback__card" style={{ backgroundColor: cardTint }}>
-        <div className="lanyard-fallback__art" style={frontStyle} />
-      </div>
     </div>
   );
 }
