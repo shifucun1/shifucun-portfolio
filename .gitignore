@@ -10,3 +10,9 @@ outputs/
 findings.md
 progress.md
 task_plan.md
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
