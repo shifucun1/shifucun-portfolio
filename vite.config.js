@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/shifucun-portfolio/',
+  base: process.env.GITHUB_PAGES === 'true' ? '/shifucun-portfolio/' : '/',
   plugins: [react()],
   assetsInclude: ['**/*.glb']
 });
